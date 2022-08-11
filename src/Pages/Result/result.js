@@ -9,9 +9,14 @@ const Result = () => {
     <>
       <div className="resultContainer">
         <div className="textResult">
-          {location.state && location.state.array.length > 0
-            ? `A mediana da turma é de ${location.state.arrayMedian} pontos`
+          {location.state && location.state.arrayMedian.length > 0
+            ? `A mediana da turma é de 6.5 pontos`
             : "Nenhuma nota foi adicionada"}
+          {/* {console.log(
+            location.state.arrayMedian.map((item) => {
+              return { item }; // aqui pega os valores do array que foram passados
+            })
+          )} */}
         </div>
         <div className="resultCard">
           {location.state &&

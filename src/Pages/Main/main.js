@@ -7,6 +7,7 @@ const Main = () => {
   const navigate = useNavigate();
   const [formSideBar, setFormSideBar] = useState([]);
   const [card, setCard] = useState([]);
+  const arrayMedian = [];
 
   const handeldel = (index) => {
     card.splice(index, 1);
@@ -45,10 +46,13 @@ const Main = () => {
             size="big"
             text="Ver média da turma"
             onClick={() => {
+              card.map((item) => {
+                arrayMedian.push(item.grade); //aqui adiciona as notas em um array e manda pra pagina de resultados
+              });
               navigate("/resultado", {
                 state: {
                   array: card,
-                  arrayMedian: 50,
+                  arrayMedian: arrayMedian,
                 },
               });
             }}
