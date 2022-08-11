@@ -47,7 +47,7 @@ const Main = () => {
             text="Ver média da turma"
             onClick={() => {
               card.map((item) => {
-                arrayMedian.push(item.grade); //aqui adiciona as notas em um array e manda pra pagina de resultados
+                return arrayMedian.push(item.grade); //aqui adiciona as notas em um array e manda pra pagina de resultados
               });
               navigate("/resultado", {
                 state: {
