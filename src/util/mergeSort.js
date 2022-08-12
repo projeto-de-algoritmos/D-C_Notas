@@ -10,7 +10,7 @@ function merge(left, right) {
   return [...arr, ...left, ...right]
 }
 
-export function mergeSort(array) {
+export default function mergeSort(array) {
   const half = array.length / 2
 
   if (array.length < 2) {
