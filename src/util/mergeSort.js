@@ -1,7 +1,7 @@
 function merge(left, right) {
   let arr = []
   while (left.length && right.length) {
-    if (left[0] < right[0]) {
+    if (left[0].grade < right[0].grade) {
       arr.push(left.shift())
     } else {
       arr.push(right.shift())
@@ -20,9 +20,3 @@ export default function mergeSort(array) {
   const left = array.splice(0, half)
   return merge(mergeSort(left), mergeSort(array))
 }
-
-//var arey = [2, 0, 34, 6, 1, 0, 87, 9, 5, 99, 7, 3, -1]
-
-//var orde = mergeSort(arey)
-
-//console.log("Esse é o array ordenado", orde)

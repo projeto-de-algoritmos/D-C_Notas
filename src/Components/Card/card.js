@@ -2,9 +2,9 @@ import "./card.css";
 import React from "react";
 import image from "../../Assets/trash.png";
 
-const Card = ({ name, grade, trash, onClick }) => {
+const Card = ({ name, grade, trash, onClick, median }) => {
   return (
-    <div className="cardContainer">
+    <div className={`cardContainer ${median ? median > grade ? 'BelowMedian' : 'AboveMedian' : ''}`}>
       {trash && (
         <img className="trashImage" alt="trash" src={image} onClick={onClick} />
       )}

@@ -3,12 +3,13 @@ import React from "react";
 import { Button, Card, SideBar } from "../../Components";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import findMedian from "../../util/mediana";
 
 const Main = () => {
   const navigate = useNavigate();
   const [formSideBar, setFormSideBar] = useState([]);
   const [card, setCard] = useState([]);
-  const arrayMedian = [];
+  const arrayAverage = [];
 
   const handeldel = (index) => {
     card.splice(index, 1);
@@ -20,6 +21,14 @@ const Main = () => {
       return setCard((card) => [...card, formSideBar]);
     }
   }, [formSideBar]);
+
+  const getMedian = () => {
+    card.map((item) => item.grade = Number(item.grade));
+    const result = findMedian(card)
+    navigate("/resultado", {
+      state: result
+    })
+  }
   return (
     <>
       <SideBar setOnClick={setFormSideBar} />
@@ -46,17 +55,7 @@ const Main = () => {
           <Button
             size="big"
             text="Ver média da turma"
-            onClick={() => {
-              card.map((item) => {
-                return arrayMedian.push(item.grade); //aqui adiciona as notas em um array e manda pra pagina de resultados
-              });
-              navigate("/resultado", {
-                state: {
-                  array: card,
-                  arrayMedian: arrayMedian,
-                },
-              });
-            }}
+            onClick={() => getMedian()}
           />
         </div>
       </div>

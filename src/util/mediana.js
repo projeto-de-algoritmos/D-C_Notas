@@ -7,9 +7,13 @@ export default function findMedian(inputArray) {
   let oddLength = arrLength % 2 != 0;
   let median;
   if (oddLength) {
-    median = sortedArr[middleIndex];
+    median = sortedArr[middleIndex].grade;
   } else {
-    median = (sortedArr[middleIndex] + sortedArr[middleIndex - 1]) / 2;
+    median = (sortedArr[middleIndex].grade + sortedArr[middleIndex - 1].grade) / 2;
   }
-  return median;
+  const result = {
+    gradeAverage: sortedArr,
+    median: median
+  }
+  return result;
 }

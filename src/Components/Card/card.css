@@ -10,6 +10,14 @@
   margin-top: 20px;
 }
 
+.BelowMedian{
+  background-color: #fe7231;
+}
+
+.AboveMedian{
+  background-color: #340de4;
+}
+
 .titleCard {
   margin: 20px;
   margin-top: 30px;
