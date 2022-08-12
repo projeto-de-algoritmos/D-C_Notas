@@ -1,4 +1,5 @@
 import "./result.css";
+import React from "react";
 import { Button, Card } from "../../Components";
 import { useNavigate, useLocation } from "react-router-dom";
 

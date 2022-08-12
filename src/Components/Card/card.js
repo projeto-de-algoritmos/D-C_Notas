@@ -1,4 +1,5 @@
 import "./card.css";
+import React from "react";
 import image from "../../Assets/trash.png";
 
 const Card = ({ name, grade, trash, onClick }) => {
