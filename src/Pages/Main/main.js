@@ -9,7 +9,6 @@ const Main = () => {
   const navigate = useNavigate();
   const [formSideBar, setFormSideBar] = useState([]);
   const [card, setCard] = useState([]);
-  const arrayAverage = [];
 
   const handeldel = (index) => {
     card.splice(index, 1);
