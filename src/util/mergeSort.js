@@ -1,22 +1,22 @@
 function merge(left, right) {
-  let arr = []
+  let arr = [];
   while (left.length && right.length) {
     if (left[0].grade < right[0].grade) {
-      arr.push(left.shift())
+      arr.push(left.shift());
     } else {
-      arr.push(right.shift())
+      arr.push(right.shift());
     }
   }
-  return [...arr, ...left, ...right]
+  return [...arr, ...left, ...right];
 }
 
 export default function mergeSort(array) {
-  const half = array.length / 2
+  const half = array.length / 2;
 
   if (array.length < 2) {
-    return array
+    return array;
   }
 
-  const left = array.splice(0, half)
-  return merge(mergeSort(left), mergeSort(array))
+  const left = array.splice(0, half);
+  return merge(mergeSort(left), mergeSort(array));
 }

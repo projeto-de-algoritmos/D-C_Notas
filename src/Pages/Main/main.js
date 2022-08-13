@@ -22,12 +22,15 @@ const Main = () => {
   }, [formSideBar]);
 
   const getMedian = () => {
-    card.map((item) => item.grade = Number(item.grade));
-    const result = findMedian(card)
+    var result;
+    card.map((item) => (item.grade = Number(item.grade)));
+    if (card.length >= 1) {
+      result = findMedian(card);
+    }
     navigate("/resultado", {
-      state: result
-    })
-  }
+      state: result,
+    });
+  };
   return (
     <>
       <SideBar setOnClick={setFormSideBar} />
